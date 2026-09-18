@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" role="img" aria-labelledby="title desc">
+  <title id="title">月下小舟 · worldonlyu</title>
+  <desc id="desc">An original warm banner with a crescent moon, lotus and fox silhouette.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff7e8"/><stop offset=".56" stop-color="#ffe9d6"/><stop offset="1" stop-color="#e6c8e3"/></linearGradient>
+    <linearGradient id="water" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b66b83" stop-opacity=".75"/><stop offset="1" stop-color="#514568" stop-opacity=".95"/></linearGradient>
+  </defs>
+  <rect width="1200" height="300" rx="24" fill="url(#sky)"/>
+  <circle cx="970" cy="80" r="54" fill="#fff2b7"/><circle cx="994" cy="64" r="54" fill="#ffe9d6"/>
+  <g fill="none" stroke="#bd7185" stroke-width="4" stroke-linecap="round" opacity=".55"><path d="M58 110c26-18 52-18 78 0 26 18 52 18 78 0"/><path d="M78 128c26-18 52-18 78 0 26 18 52 18 78 0"/><path d="M1022 145c24-16 48-16 72 0 24 16 48 16 72 0"/></g>
+  <path d="M0 202c130-34 220-22 342 5 120 26 210 22 316-6 124-33 240-21 362 7 74 17 126 16 180 4v88H0z" fill="url(#water)"/>
+  <g fill="none" stroke="#f9d8d0" stroke-width="3" opacity=".55"><path d="M50 244c110-18 190-17 298 0"/><path d="M470 257c110-18 196-17 308 0"/><path d="M846 229c92-14 174-13 260 0"/></g>
+  <g transform="translate(170 166)" fill="#553e5c"><path d="M0 56c14-30 45-46 83-47 26-1 47 8 62 24 10 11 18 27 22 43H-4z"/><path d="M38 28 47-9l27 26 31-27 6 39"/><path d="M132 66c45 5 71-10 89-39-33 21-63 20-89 4"/></g>
+  <g transform="translate(400 213)" fill="#ffd9a8" stroke="#a55365" stroke-width="3"><path d="M0 29c17-37 38-52 61-52s44 15 61 52z"/><path d="M16 27c12-20 28-31 45-31s33 11 45 31z" fill="#fff1d2"/><path d="M61-18c-16 13-30 26-39 44M61-18c16 13 30 26 39 44" fill="none"/></g>
+  <g fill="#fff0a8" opacity=".9"><circle cx="267" cy="57" r="3"/><circle cx="300" cy="94" r="2"/><circle cx="344" cy="48" r="3"/><circle cx="620" cy="74" r="2"/></g>
+  <text x="590" y="142" text-anchor="middle" fill="#553e5c" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="38" font-weight="700" letter-spacing="4">WORLDONLYU</text>
+  <text x="590" y="180" text-anchor="middle" fill="#9c5269" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="17" letter-spacing="3">月下写代码 · 小舟载好奇</text>
+  <text x="1110" y="270" text-anchor="end" fill="#ffe9d6" font-family="serif" font-size="19" opacity=".86">山有木兮 · 心有光</text>
+</svg>
