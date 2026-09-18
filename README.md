@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./assets/banner.svg" alt="月下小舟 · worldonlyu" width="100%" />
+  <img src="./assets/banner-main.svg" alt="月下小舟 · worldonlyu" width="100%" />
 </p>
 
 <h1 align="center">你好，我是 worldonlyu 🌸</h1>
