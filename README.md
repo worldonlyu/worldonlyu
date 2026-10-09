@@ -15,11 +15,11 @@ Before anything else, the honest state of the field as of October 2026, so that 
 
 - **No mind has ever been uploaded, and no mammalian brain has ever been emulated.** The most complete brain emulation work to date is on the fruit fly, whose brain has roughly 140,000 neurons. A cat's cerebral cortex alone has about 250 million by direct count, and whole-brain figures for cats are estimates; a human brain has roughly 86 billion neurons. See [Whole Brain Emulation and Connectomics](docs/06-whole-brain-emulation-and-connectomics.md).
 - **A connectome is not a mind.** Even a perfect wiring diagram leaves out synaptic strengths, neuromodulation, glia, gene expression and the plasticity rules that make a brain change. Whether those can be recovered from a preserved brain is an open scientific question, not a settled one.
-- **Brain preservation exists; revival does not.** Aldehyde-stabilised cryopreservation can preserve the fine structure of a mammalian brain, and a few organisations offer it, some for pets. Nobody has ever revived or emulated a preserved brain, and the window for preservation is hours after death. See [Brain Preservation, Cryonics, and What Exists for Pets](docs/07-brain-preservation.md).
+- **Brain preservation exists; revival does not.** Aldehyde-stabilised cryopreservation has preserved whole rabbit and pig brains with their fine structure intact, in the laboratory. A few organisations offer brain or body preservation to the public, by vitrification or by aldehyde fixation, and some accept pets; none sells the prize-winning laboratory protocol itself. Nobody has ever revived or emulated a preserved brain, and the window for preservation is hours after death. See [Brain Preservation, Cryonics, and What Exists for Pets](docs/07-brain-preservation.md).
 - **A mind that was not preserved cannot be recovered.** No known or foreseeable method reconstructs an individual mind from memories, photographs, DNA or a clone. A cloned animal is a genetic twin, not the same individual. This notebook does not pretend otherwise. See [What Is Possible Today](docs/10-what-is-possible-today.md).
 - **Whether any emulation would be conscious is unresolved.** The leading scientific theories of consciousness disagree with each other, and the 2025 adversarial test of two of them did not crown a winner. Whether consciousness depends on biology at all is actively debated. See [The Science of Consciousness](docs/03-science-of-consciousness.md) and [Machine Consciousness](docs/04-machine-consciousness.md).
 
-None of this is a reason to stop. These are real scientific and philosophical frontiers, and they are moving: whole-brain connectomes, vision-language-action robots, and adversarial tests of consciousness theories all arrived in the last three years. The point of this notebook is to understand them well enough to contribute, and to keep grief from turning into credulity.
+None of this is a reason to stop. These are real scientific and philosophical frontiers, and they are moving: whole-brain connectomes, vision-language-action robots, and adversarial tests of consciousness theories all arrived in the last three or four years. The point of this notebook is to understand them well enough to contribute, and to keep grief from turning into credulity.
 
 ## How this repository is organised
 
@@ -28,7 +28,7 @@ None of this is a reason to stop. These are real scientific and philosophical fr
 | [ROADMAP.md](ROADMAP.md) | Learning and research roadmap: prerequisites, three tracks, first-year milestones |
 | [OPEN-QUESTIONS.md](OPEN-QUESTIONS.md) | Consolidated open questions, tagged empirical or conceptual, with what evidence would move each |
 | [GLOSSARY.md](GLOSSARY.md) | Definitions of the terms used across the chapters |
-| [BIBLIOGRAPHY.md](BIBLIOGRAPHY.md) | Every reference cited in the chapters, grouped by chapter, each independently verified online |
+| [BIBLIOGRAPHY.md](BIBLIOGRAPHY.md) | Every reference cited in the chapters, grouped by chapter, each checked against web search results, with unconfirmed entries marked |
 | `docs/` | The chapters, listed below |
 | `notes/` | Your own working notes, with templates for paper notes and weekly reviews |
 
@@ -51,7 +51,7 @@ Suggested first reading order: 10, 05, 06, 03, then 01 and 02 for the hands-on t
 
 ## How this notebook was built, and its limits
 
-The chapters were drafted in October 2026 with AI assistance (Claude), using live web research, in an environment that could run web searches but could not open publisher, journal, preprint or vendor pages. That shaped the checking that was possible:
+The chapters were drafted in October 2026 with AI assistance (Claude), using live web research, in an environment that could run web searches but could not open publisher, journal, preprint or most vendor pages (GitHub and a few company sites were the exceptions). That shaped the checking that was possible:
 
 - Each chapter was drafted by one research pass and then re-checked by a separate pass whose job was to refute it.
 - Every reference was then re-checked, one by one, against web search results: title, first author, year and venue had to match a real work, and URLs were taken from the search results rather than guessed. Confirmation therefore rests on search listings, not on the source pages themselves.

@@ -115,7 +115,7 @@ Whether consciousness, as opposed to intelligence, needs a body is sharper still
 
 ## References
 
-Sourcing: 41 of 41 references confirmed by web search on 2026-10-09; entries marked [not confirmed by search] could not be confirmed and should be checked before use.
+Sourcing: 39 of 41 references confirmed by web search on 2026-10-09, and 2 confirmed as works but with URLs that did not appear in search results (marked [URL not confirmed by search]); check marked entries before use.
 
 1. Brooks, R. A. (1991). *Intelligence without representation*. Artificial Intelligence 47(1-3): 139-159. https://doi.org/10.1016/0004-3702(91)90053-M
 2. Harnad, S. (1990). *The Symbol Grounding Problem*. Physica D 42(1-3): 335-346. https://eprints.soton.ac.uk/250382/

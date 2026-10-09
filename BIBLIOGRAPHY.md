@@ -23,7 +23,7 @@ Entries: 321 across 10 chapters, of which 2 are marked not confirmed.
 
 Chapter: [docs/01-embodied-cognition-foundations.md](docs/01-embodied-cognition-foundations.md)
 
-Sourcing: 41 of 41 references confirmed by web search on 2026-10-09; entries marked [not confirmed by search] could not be confirmed and should be checked before use.
+Sourcing: 39 of 41 references confirmed by web search on 2026-10-09, and 2 confirmed as works but with URLs that did not appear in search results (marked [URL not confirmed by search]); check marked entries before use.
 
 1. Brooks, R. A. (1991). *Intelligence without representation*. Artificial Intelligence 47(1-3): 139-159. https://doi.org/10.1016/0004-3702(91)90053-M
 2. Harnad, S. (1990). *The Symbol Grounding Problem*. Physica D 42(1-3): 335-346. https://eprints.soton.ac.uk/250382/
@@ -71,7 +71,7 @@ Sourcing: 41 of 41 references confirmed by web search on 2026-10-09; entries mar
 
 Chapter: [docs/02-embodied-ai-state-of-the-art.md](docs/02-embodied-ai-state-of-the-art.md)
 
-Sourcing: 42 of 42 references confirmed by web search on 2026-10-09; entries marked [not confirmed by search] could not be confirmed and should be checked before use. Entries marked company-reported or press report rest on vendor claims that no independent party has replicated.
+Sourcing: 42 of 42 references confirmed as works by web search on 2026-10-09; where one bibliographic detail (venue, pages, author or title) could not be confirmed, the entry says so in parentheses, and two sources named in the body as (not confirmed by search) have no entry. Entries marked company-reported or press report rest on vendor claims that no independent party has replicated.
 
 1. Brohan, A., Brown, N., Carbajal, J., et al. (2023). *RT-2: Vision-Language-Action Models Transfer Web Knowledge to Robotic Control*. CoRL 2023, PMLR v229 (the proceedings version lists Zitkovich, B. as first author); arXiv 2307.15818. https://arxiv.org/abs/2307.15818
 2. Open X-Embodiment Collaboration (2023). *Open X-Embodiment: Robotic Learning Datasets and RT-X Models*. arXiv 2310.08864; presented at ICRA 2024 (venue not confirmed by search). https://arxiv.org/abs/2310.08864
@@ -91,7 +91,7 @@ Sourcing: 42 of 42 references confirmed by web search on 2026-10-09; entries mar
 16. Xing, Y., Luo, X., Xie, J., Gao, L., Shen, H. T., Song, J. (2025). *Shortcut Learning in Generalist Robot Policies: The Role of Dataset Diversity and Fragmentation*. CoRL 2025, PMLR 305:3239-3266; arXiv 2508.06426. https://proceedings.mlr.press/v305/xing25a.html
 17. Radosavovic, I., Zhang, B., Shi, B., Rajasegaran, J., Kamat, S., Darrell, T., Sreenath, K., Malik, J. (2024). *Humanoid Locomotion as Next Token Prediction*. NeurIPS 2024 (Advances in Neural Information Processing Systems 37); arXiv 2402.19469. https://proceedings.neurips.cc/paper_files/paper/2024/hash/90afd20dc776bc8849c31d61a0763a0b-Abstract.html
 18. Lin, F., Hu, Y., Sheng, P., Wen, C., You, J., Gao, Y. (2024). *Data Scaling Laws in Imitation Learning for Robotic Manipulation*. ICLR 2025 (oral); arXiv 2410.18647. https://arxiv.org/abs/2410.18647v1
-19. Shiu, P. K., et al. (2024). *A Drosophila computational brain model reveals sensorimotor processing*. Nature (volume and pages not confirmed by search; preprint bioRxiv 10.1101/2023.05.02.539144). https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11446845/
+19. Shiu, P. K., et al. (2024). *A Drosophila computational brain model reveals sensorimotor processing*. Nature 634(8032): 210-219. https://doi.org/10.1038/s41586-024-07763-9
 20. Sapkota, R., Cao, Y., Roumeliotis, K. I., Karkee, M. (2025). *Vision-Language-Action Models: Concepts, Progress, Applications and Challenges*. arXiv 2505.04769. https://arxiv.org/abs/2505.04769
 21. Fei, S., Wang, S., Shi, J., et al. (2025). *LIBERO-Plus: In-depth Robustness Analysis of Vision-Language-Action Models*. arXiv 2510.13626; a revised version appears at CVPR 2026 as *LIBERO-Plus: A Progressive Robustness Benchmark for Visual-Language-Action Models*. https://arxiv.org/pdf/2510.13626
 22. FAIR at Meta, with the University of Washington and Carnegie Mellon University (2025). *Tactile Beyond Pixels: Multisensory Touch Representations for Robot Manipulation* (Sparsh-X). arXiv 2506.14754 (first author not confirmed by search). https://arxiv.org/abs/2506.14754v1
@@ -223,7 +223,7 @@ Sourcing: 24 of 24 references confirmed by web search on 2026-10-09; entries mar
 
 Chapter: [docs/06-whole-brain-emulation-and-connectomics.md](docs/06-whole-brain-emulation-and-connectomics.md)
 
-Sourcing: 23 of 23 references confirmed by web search on 2026-10-09; entries marked [not confirmed by search] could not be confirmed and should be checked before use.
+Sourcing: 23 of 23 references confirmed by web search on 2026-10-09; entries marked [not confirmed by search] could not be confirmed and should be checked before use. Links to software and websites in Where to start are pointers, not verified references.
 
 1. Sandberg, A., Bostrom, N. (2008). *Whole Brain Emulation: A Roadmap*. Future of Humanity Institute, Oxford University, Technical Report #2008-3. https://www.futureofhumanityinstitute.org/s/2008-3.pdf
 2. White, J. G., Southgate, E., Thomson, J. N., Brenner, S. (1986). *The structure of the nervous system of the nematode Caenorhabditis elegans*. Philosophical Transactions of the Royal Society of London B 314(1165): 1-340. https://doi.org/10.1098/rstb.1986.0056
@@ -344,7 +344,7 @@ Sourcing: 40 of 40 references confirmed by web search on 2026-10-09; entries mar
 
 Chapter: [docs/09-recording-simulation-and-hardware.md](docs/09-recording-simulation-and-hardware.md)
 
-Sourcing: 39 of 39 references confirmed by web search on 2026-10-09; entries marked [not confirmed by search] could not be confirmed and should be checked before use.
+Sourcing: 39 of 39 references confirmed by web search on 2026-10-09; entries marked [not confirmed by search] could not be confirmed and should be checked before use. Links to software and websites in Where to start are pointers, not verified references.
 
 1. Steinmetz, N. A., Aydin, C., Lebedeva, A., Okun, M., Pachitariu, M., et al. (2021). *Neuropixels 2.0: A miniaturized high-density probe for stable, long-term brain recordings*. Science 372(6539): eabf4588. https://www.science.org/doi/10.1126/science.abf4588
 2. Jardim-Messeder, D., et al., Herculano-Houzel, S. (2017). *Dogs have the most neurons, though not the largest brain: Trade-off between body mass and number of neurons in the cerebral cortex of large carnivoran species*. Frontiers in Neuroanatomy 11: 118. https://doi.org/10.3389/fnana.2017.00118 (also cited in chapter 05)
