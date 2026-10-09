@@ -51,9 +51,14 @@ Suggested first reading order: 10, 05, 06, 03, then 01 and 02 for the hands-on t
 
 ## How this notebook was built, and its limits
 
-The chapters were drafted in October 2026 with AI assistance (Claude), using live web research. Every reference was independently fact-checked by a second pass that tried to refute it; references that could not be confirmed online were dropped rather than kept. A final review pass checked the chapters against each other for contradictions and against the web for specific numbers and dates.
+The chapters were drafted in October 2026 with AI assistance (Claude), using live web research, in an environment that could run web searches but could not open publisher, journal, preprint or vendor pages. That shaped the checking that was possible:
 
-That process reduces errors. It does not eliminate them. Treat every claim here as a pointer to a source, not as the source itself, and read the primary literature before relying on anything. Dates and "state of the field" statements are accurate to October 2026 and will age.
+- Each chapter was drafted by one research pass and then re-checked by a separate pass whose job was to refute it.
+- Every reference was then re-checked, one by one, against web search results: title, first author, year and venue had to match a real work, and URLs were taken from the search results rather than guessed. Confirmation therefore rests on search listings, not on the source pages themselves.
+- References that could not be confirmed that way are kept but marked **[not confirmed by search]** in the chapter and in `BIBLIOGRAPHY.md`, so you can see exactly where the ground is soft. Each chapter's References section opens with a one-line count.
+- A whole-notebook review checked the chapters against each other for contradictions and against the web for specific numbers and dates, and its unresolved findings are listed at the end of `OPEN-QUESTIONS.md` as known gaps.
+
+That process catches many errors. It does not catch all of them, and a search listing can confirm that a paper exists without confirming what it says. Treat every claim here as a pointer to a source, not as the source itself, and read the primary literature before relying on anything. Dates and "state of the field" statements are accurate to October 2026 and will age.
 
 ## Working with this notebook
 

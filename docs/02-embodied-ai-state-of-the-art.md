@@ -1,0 +1,116 @@
+# Embodied AI and Robot Learning: State of the Art (2023 to 2026)
+
+> Between 2023 and late 2026, robot learning borrowed the central move of language modelling: pretrain one large network on heterogeneous data from many robots and tasks, then adapt it. This chapter follows that recipe from RT-2 and Open X-Embodiment to the pi0 family, GR00T and Gemini Robotics 2, and sets it beside the two other threads that demonstrably work: massively parallel simulation for locomotion and learned world models for planning. It reports what has been shown, who reported it and how much has been independently checked, which for nearly every 2026 result is nothing. It then collects the serious critiques, from undisclosed teleoperation to shortcut learning and Rodney Brooks's case that dexterity cannot be learned from video. It closes with open questions and a cheapest-first starting path.
+
+## Why this matters for the project
+
+Embodied AI is the branch of machine learning that has had to confront bodies rather than text. Three of its lessons bear on whether a mind can be preserved or recreated.
+
+First, competence is cheap to specify and expensive to acquire. The models below are architecturally simple, but every unit of real skill was bought with hours of teleoperated demonstration or millions of simulated trials. The largest open real-robot dataset is about 350 hours [Khazatsky et al., 2024](https://arxiv.org/abs/2403.12945); the largest vendor dataset about one million trajectories [Bu et al., 2025](https://arxiv.org/abs/2503.06669). A cat that lived six years accumulated continuous, multimodal, self-directed experience far beyond either, and policies trained on narrow data demonstrably learn shortcuts rather than structure [Xing et al., 2025](https://proceedings.mlr.press/v305/xing25a.html).
+
+Second, embodiment is not optional. V-JEPA 2 learns from over a million hours of video yet still needs robot interaction data before it can plan [Assran et al., 2025](https://arxiv.org/abs/2506.09985); pi0.5 generalises to unseen homes because it trained in many homes [Black et al., 2025](https://arxiv.org/abs/2504.16054). Brooks's point that a human hand carries about 17,000 mechanoreceptors [Brooks, 2025](https://rodneybrooks.com/why-todays-humanoids-wont-learn-dexterity/) shows how much of any animal's input stream has never been recorded. Even a perfect neural map would therefore need a body whose sensorimotor statistics match the original's, or the emulated mind would be in a condition no neuroscience has characterised.
+
+Third, the evidence is weaker than the demos suggest. No animal's full behavioural repertoire has been reproduced from its connectome alone; the closest results are connectome-constrained whole-brain Drosophila models that reproduce specific sensorimotor circuit behaviours (Shiu et al., Nature 2024). The narrow positive signal is that DreamerV3 [Hafner et al., 2025](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12003158/) and Genie 3 show learned latent simulators are feasible at modest scale, a prerequisite for hosting an emulated agent in a virtual body.
+
+Embodied AI, in short, tells you what a body costs, not how to copy a mind.
+
+## Key ideas
+
+**Vision-language-action (VLA) model.** A pretrained vision-language model fine-tuned to emit robot actions, as discrete tokens (RT-2, OpenVLA) or continuous action chunks from a flow-matching or diffusion head (pi0, GR00T N1), so that web-scale semantic knowledge conditions low-level control.
+
+**Action chunking.** Predicting a sequence of future actions (50 steps in pi0) in one forward pass, often with a separate "action expert" set of weights; it smooths behaviour and reduces compounding error.
+
+**Dual-system architecture.** A slow vision-language reasoner that plans (Helix's System 2 runs at 7 to 9 Hz) paired with a fast visuomotor policy at tens to hundreds of hertz.
+
+**Teleoperated demonstration and imitation learning.** A human drives the robot and a policy is trained on the trajectories by supervised learning (ACT, diffusion policy, VLA fine-tuning). Dominant for manipulation; effective in distribution, brittle outside it.
+
+**Massively parallel sim-to-real RL.** Thousands of simulated robots on one GPU, domain randomisation and curricula, then transfer to hardware with no real-world training; the standard recipe for legged walking.
+
+**World models.** A learned model predicting future observations or latent states given actions, used for planning in imagination (DreamerV3), zero-shot planning after video pretraining (V-JEPA 2-AC), or generative simulation (Genie 3, Cosmos, 1X).
+
+**Shortcut learning.** Policies latching onto spurious cues (background, camera pose) because each sub-dataset lacks diversity and sub-datasets are fragmented from one another; Xing et al.'s explanation of poor generalisation.
+
+**Visuo-tactile sensing.** Camera-based fingertip sensors (GelSight, Meta's Digit 360 with about 8 million taxels) image gel deformation to recover contact geometry and force. The data Brooks says the field lacks.
+
+## State of the field (as of 2026-10-09)
+
+### Generalist policies
+
+RT-2 (2023) co-fine-tuned a web-scale vision-language model on robot trajectories so one network emits text tokens and discretised motor commands; it generalised to novel objects and followed instructions absent from its robot data, such as "move banana near the smallest number" [Brohan et al., 2023](https://arxiv.org/abs/2307.15818). Open X-Embodiment pooled 22 robot types from 21 institutions (527 skills, 160,266 task instances) and showed positive transfer over single-robot training [Open X-Embodiment Collaboration, 2023](https://arxiv.org/abs/2310.08864). OpenVLA (2024; 7B, MIT licence) made the recipe open-weight [Kim et al., 2024](https://arxiv.org/abs/2406.09246). pi0 (late 2024) replaced discrete actions with a flow-matching action expert predicting 50-step chunks [Black et al., 2024](https://arxiv.org/abs/2410.24164); pi0.5 (2025) added web data and subtask prediction and cleaned unseen homes, with imperfect first-try success and limited dexterity, as the authors state [Black et al., 2025](https://arxiv.org/abs/2504.16054). Gemini Robotics 1.5 (announced September 2025, technical report October 2025) pairs an embodied-reasoning planner with a VLA that "thinks before acting" and transfers motions across ALOHA, bimanual Franka and Apollo bodies [Gemini Robotics Team, 2025](https://arxiv.org/abs/2510.03342). GR00T N1 (March 2025) is an open-weight dual-system VLA trained on real trajectories, human video and synthetic data [Bjorck et al., 2025](https://arxiv.org/abs/2503.14734). Figure's Helix (February 2025) is proprietary and unevaluated independently.
+
+2026 kept the cadence, with company-reported numbers only. pi0.7 (April; technical report [arXiv 2604.15483](https://arxiv.org/abs/2604.15483)) is a roughly 5B VLA (Gemma3-4B plus an 860M flow action expert) with a 14B BAGEL subgoal-image world model; the report gives quantitative results, such as 85.6% task progress zero-shot on a UR5e against a specialist trained on 375 hours, and claims compositional generalisation. Weights are not released. GR00T N1.7 (April) is a 3B reasoning VLA on a Cosmos-Reason2-2B backbone, fine-tunable through LeRobot; its code is Apache 2.0 but its weights fall under the NVIDIA Open Model License ([NVIDIA, 2026](https://huggingface.co/blog/nvidia/gr00t-n1-7)). GR00T N2, a DreamZero-based world-action model previewed at GTC in March, is slated for end-2026 and so far vendor-reported. Gemini Robotics 2 (30 July) controls legs, torso, arms and a 22-DoF SharpaWave hand on Apptronik's Apollo 2 under one policy, alongside ER 2 (public via the Gemini API) and On-Device 2 ([The Robot Report, 2026](https://www.therobotreport.com/google-deepmind-says-gemini-robotics-2-enables-full-body-control/)). Reported success runs from 36% to 92%: 92% for unscrewing a light bulb, but the hardest dexterous tasks on the SharpaWave hand (floor pickup, trash-bag knotting, ziplock sealing, light-bulb installation) sit below 50%.
+
+### Data
+
+The datasets are tiny by language-model standards. DROID: 76k trajectories, about 350 hours, 564 scenes, 86 tasks, 50 collectors over 12 months [Khazatsky et al., 2024](https://arxiv.org/abs/2403.12945). AgiBot World claims over one million trajectories across 217 tasks from 100 dual-arm humanoids and a vendor-reported 30% gain over Open X-Embodiment pretraining, under CC BY-NC-SA [Bu et al., 2025](https://arxiv.org/abs/2503.06669). Mobile ALOHA showed that 50 demonstrations per task, co-trained with static ALOHA data, raise success by up to 90 points [Fu et al., 2024](https://arxiv.org/abs/2401.02117).
+
+### Locomotion versus manipulation
+
+Locomotion is RL's clearest success. Rudin et al. trained ANYmal to walk in under four minutes on flat ground (about twenty on rough terrain) by simulating thousands of robots on one GPU, then transferred to hardware [Rudin et al., 2022](https://proceedings.mlr.press/v164/rudin22a.html); continued in Isaac Lab, MuJoCo Playground and Genesis, it underlies nearly every humanoid walking demo. Radosavovic et al. (NeurIPS 2024, [arXiv 2402.19469](https://arxiv.org/abs/2402.19469)) trained a causal transformer on simulated policies, model-based controllers, motion capture and YouTube video and walked a humanoid through San Francisco zero-shot; an ablation showed transfer with only 27 hours of walking data. Manipulation has no equivalent: imitation dominates, and RL is only returning as fine-tuning, as in pi*0.6 with RECAP (November 2025), which learns from the robot's own rollouts and, the company reports, more than doubled throughput and roughly halved failures on tasks such as espresso making ([Physical Intelligence, 2025](https://arxiv.org/abs/2511.14759)).
+
+### World models
+
+DreamerV3 plans in a learned latent model, beating specialised methods on over 150 tasks with one configuration and collecting diamonds in Minecraft from scratch [Hafner et al., 2025](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12003158/). V-JEPA 2 pretrains on over one million hours of video, fits an action-conditioned model on under 62 hours of DROID video and plans pick-and-place zero-shot on Franka arms in two labs [Assran et al., 2025](https://arxiv.org/abs/2506.09985). Generative video world models are newer and less proven: Genie 3 (5 August 2025) generates explorable 720p environments at 24 frames per second for several minutes ([Google DeepMind, 2025](https://deepmind.google/models/genie/)); NVIDIA's Cosmos 3 omnimodal world models followed in June 2026 ([arXiv 2606.02800](https://arxiv.org/abs/2606.02800)); 1X's World Model for NEO (company blog, 12 January 2026) pairs a roughly 14B video backbone with an inverse-dynamics model, its claimed untrained tasks unverified ([TechCrunch, 2026](https://techcrunch.com/2026/01/13/neo-humanoid-maker-1x-releases-world-model-to-help-bots-learn-what-they-see)). Genie 3 has no hard-coded physics and no published robot-control result; results from the whole class remain thin.
+
+### Evaluation, deployment and the market
+
+RoboArena runs double-blind pairwise comparisons across seven institutions on DROID hardware and finds, over 600-plus real episodes and seven policies, that this ranks policies more accurately than centralised evaluation [Atreya et al., 2025](https://proceedings.mlr.press/v305/atreya25a.html). Deployments are real but modest (Agility's Digit: over 100,000 totes at GXO by November 2025; Figure 03 in BMW Spartanburg logistics; UBTech: 1,079 humanoids shipped in 2025). Boston Dynamics unveiled the production electric Atlas at CES in January 2026, all 2026 units committed to Hyundai's RMAC and Google DeepMind, which is deploying Gemini Robotics models on Atlas and Spot ([Boston Dynamics, 2026](https://bostondynamics.com/blog/boston-dynamics-unveils-new-atlas-robot-to-revolutionize-industry/)); Hyundai targets 30,000 units per year of capacity by 2028, while Boston Dynamics builds roughly four a month in 2026. Shipment trackers disagree: AgiBot leads all three counts below, but totals and the order beneath first place depend on definitions ([Counterpoint Research, 2026](https://counterpointresearch.com/en/insights/global-humanoid-robot-shipments-soar-nearly-300-percent-yoy-in-h1-2026)).
+
+| Tracker (published) | H1 2026 global shipments (YoY) | AgiBot |
+|---|---|---|
+| Counterpoint Research (19 Aug 2026) | Above 22,000 (nearly +300%) | About 9,700; then Unitree, Galbot, UBTech, Leju |
+| IDC (30 Sep 2026) | Nearly 25,000 (+432%) | 8,600+ |
+| Smart Analytics Global (2026) | 19,100 (+272%) | 8,400 (Unitree about 5,900) |
+
+## Debates and critiques
+
+**Teleoperation versus autonomy in demos.** Tesla's October 2024 "We, Robot" Optimus bartenders were widely reported (Bloomberg, attendees) to be remotely operated; Tesla did not confirm. 1X openly sells NEO (20,000 USD or 499 USD per month) with "Expert Mode" teleoperators. The critique is disclosure; teleoperation itself is standard for data collection.
+
+**Will current methods deliver dexterity, and in this form factor?** Brooks argues video-trained humanoids cannot learn dexterity without large-scale touch data ("collecting just visual data is not collecting the right data"), predicts deployable dexterity stays poor past 2036, and expects wheels and specialised grippers to displace bipeds [Brooks, 2025](https://rodneybrooks.com/why-todays-humanoids-wont-learn-dexterity/). Counter-arguments cite Digit 360-class sensors, Sparsh-X, and that limited capability already pays in logistics.
+
+**Does more data fix generalisation?** Levine and Physical Intelligence argue scale plus diversity is the path, citing pi0.5's unseen-home results; Xing et al. show pooled datasets induce shortcuts because sub-datasets are homogeneous and fragmented [Xing et al., 2025](https://proceedings.mlr.press/v305/xing25a.html), and scaling-law work finds only power-law gains in environments and objects.
+
+**Benchmarks versus reality.** Simulation suites (LIBERO, RoboCasa, BEHAVIOR-1K) are standard, yet high LIBERO scores collapse under LIBERO-Plus perturbations of camera, lighting and layout; single-lab success tables are irreproducible; RoboArena is one answer but covers one platform (DROID on Franka).
+
+**Vendor-reported numbers dominate.** AgiBot's 30% gain, Meta's 95.1% Sparsh improvement, Genesis's "80x faster", pi*0.6's doubled throughput, Helix's 500 hours, pi0.7's report and every Gemini Robotics 2 success rate lack independent replication; Helix, Gemini Robotics 2's action model and pi0.7 have no public weights.
+
+**Simulation versus real data.** For contact-rich manipulation sim-to-real remains unreliable, most labs still collect real teleoperation data, and 2026 work argues excessive sim-to-real engineering can itself impede learning.
+
+## Open questions
+
+1. Is there a data scaling law for manipulation, and in what units: hours, scenes, objects, embodiments, contact events?
+2. Can passive video (V-JEPA 2, Genie 3, Cosmos 3) replace most robot interaction data, or is action-conditioned, tactile-rich data irreducible?
+3. How do we get long-horizon behaviour with error recovery rather than 30-second skills, and does System 2 planning scale or only relocate the brittleness?
+4. Can tactile data be collected and learned at scale, and does it unlock the dexterity Brooks says is missing?
+5. What protocol lets two labs agree that a policy improved? RoboArena and LIBERO-Plus are early answers.
+6. What safety and assurance path exists for learned whole-body controllers near humans? None is accepted.
+7. Will frontier VLAs (pi0.7, Gemini Robotics 2, Helix, GR00T N2) stay closed, leaving the open ecosystem a generation behind?
+8. Can reliability, battery life (about 4 hours on Atlas and NEO) and cost beat purpose-built automation in the tasks now piloted?
+
+## Where to start
+
+1. **Read (0 USD, one to two weeks).** The 2025 VLA survey ([arXiv 2505.04769](https://arxiv.org/abs/2505.04769)); Brooks's dexterity essay; "State of Robot Learning, December 2025" (vedder.io); then RT-2, Open X-Embodiment and pi0 in that order.
+2. **Simulate (0 USD, any laptop; NVIDIA GPU optional).** pip-install MuJoCo Playground or Genesis and train a quadruped walking policy with PPO; on an RTX-class GPU, run Isaac Lab's locomotion examples, which recreate the Rudin et al. result.
+3. **Run open data and models (0 USD plus a 16 to 24 GB GPU or a few dollars of cloud time).** Load a LIBERO suite or DROID subset in LeRobot format, evaluate OpenVLA-7B or the LeRobot ports of pi0.5 and GR00T N1.7, then fine-tune on 50 episodes.
+4. **Build an SO-101 leader-follower pair (about 130 to 250 USD in kits, up to about 500 USD assembled, plus a 3D printer or print service and a webcam).** Teleoperate 50 pick-and-place demonstrations, train ACT or diffusion policy overnight on a consumer GPU, then fine-tune pi0.5 or GR00T N1.7 on the same data: the Mobile ALOHA loop at roughly a hundredth of the cost.
+5. **Scale to mobile or bimanual (about 660 USD for the open XLeRobot bill of materials excluding printing and shipping; a second SO-101 pair adds about 200 USD).** Collect multi-camera, language-annotated episodes in LeRobot format and contribute them to the Hugging Face hub.
+6. **Legged hardware if budget allows (Unitree R1 Air at 4,900 USD list, about 6,870 USD at dealers; G1 roughly 13,500 to 18,000 USD; Go2 quadruped cheaper).** Deploy an Isaac Lab-trained locomotion policy. Anything above this (Mobile ALOHA about 32,000 USD, 1X NEO 20,000 USD) is institutional, not solo, hardware.
+
+## References
+
+1. Brohan, A., Brown, N., Carbajal, J., et al. (2023). *RT-2: Vision-Language-Action Models Transfer Web Knowledge to Robotic Control*. CoRL 2023, PMLR v229; arXiv 2307.15818. https://arxiv.org/abs/2307.15818
+2. Open X-Embodiment Collaboration (2023). *Open X-Embodiment: Robotic Learning Datasets and RT-X Models*. ICRA 2024; arXiv 2310.08864. https://arxiv.org/abs/2310.08864
+3. Kim, M. J., Pertsch, K., Karamcheti, S., et al. (2024). *OpenVLA: An Open-Source Vision-Language-Action Model*. CoRL 2024; arXiv 2406.09246. https://arxiv.org/abs/2406.09246
+4. Black, K., et al. (2024). *π0: A Vision-Language-Action Flow Model for General Robot Control*. arXiv 2410.24164. https://arxiv.org/abs/2410.24164
+5. Black, K., et al. (2025). *π0.5: a Vision-Language-Action Model with Open-World Generalization*. CoRL 2025; arXiv 2504.16054. https://arxiv.org/abs/2504.16054
+6. Gemini Robotics Team, Google DeepMind (2025). *Gemini Robotics 1.5: Pushing the Frontier of Generalist Robots with Advanced Embodied Reasoning, Thinking, and Motion Transfer*. arXiv 2510.03342. https://arxiv.org/abs/2510.03342
+7. Bjorck, J., Castañeda, F., Cherniadev, N., et al. (2025). *GR00T N1: An Open Foundation Model for Generalist Humanoid Robots*. arXiv 2503.14734. https://arxiv.org/abs/2503.14734
+8. Khazatsky, A., Pertsch, K., Nair, S., et al. (2024). *DROID: A Large-Scale In-The-Wild Robot Manipulation Dataset*. RSS 2024; arXiv 2403.12945. https://arxiv.org/abs/2403.12945
+9. Bu, Q., Cai, J., Chen, L., et al. (2025). *AgiBot World Colosseo: A Large-scale Manipulation Platform for Scalable and Intelligent Embodied Systems*. IROS 2025; arXiv 2503.06669. https://arxiv.org/abs/2503.06669
+10. Fu, Z., Zhao, T. Z., Finn, C. (2024). *Mobile ALOHA: Learning Bimanual Mobile Manipulation with Low-Cost Whole-Body Teleoperation*. CoRL 2024, PMLR v270; arXiv 2401.02117. https://arxiv.org/abs/2401.02117
+11. Hafner, D., Pasukonis, J., Ba, J., Lillicrap, T. (2025). *Mastering diverse control tasks through world models*. Nature 640, 647-653. https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12003158/
+12. Assran, M., Bardes, A., Fan, D., et al. (29 authors) (2025). *V-JEPA 2: Self-Supervised Video Models Enable Understanding, Prediction and Planning*. arXiv 2506.09985. https://arxiv.org/abs/2506.09985
+13. Rudin, N., Hoeller, D., Reist, P., Hutter, M. (2022). *Learning to Walk in Minutes Using Massively Parallel Deep Reinforcement Learning*. CoRL 2021, PMLR v164, pp. 91-100. https://proceedings.mlr.press/v164/rudin22a.html
+14. Atreya, P., Pertsch, K., Lee, T., et al. (2025). *RoboArena: Distributed Real-World Evaluation of Generalist Robot Policies*. CoRL 2025, PMLR v305; arXiv 2506.18123. https://proceedings.mlr.press/v305/atreya25a.html
+15. Brooks, R. (2025). *Why Today's Humanoids Won't Learn Dexterity*. Essay, rodneybrooks.com, 26 September 2025. https://rodneybrooks.com/why-todays-humanoids-wont-learn-dexterity/
+16. Xing, Y., Luo, X., Xie, J., Gao, L., Shen, H., Song, J. (2025). *Shortcut Learning in Generalist Robot Policies: The Role of Dataset Diversity and Fragmentation*. CoRL 2025, PMLR v305; arXiv 2508.06426. https://proceedings.mlr.press/v305/xing25a.html

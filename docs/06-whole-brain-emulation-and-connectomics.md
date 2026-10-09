@@ -1,0 +1,122 @@
+# Whole Brain Emulation and Connectomics
+
+> Whole brain emulation (WBE) proposes to scan one particular brain in enough detail to build a computational model that behaves as that brain would; connectomics, the mapping of every neuron and synapse in a piece of tissue, is the part of that programme that has delivered. As of October 2026 there are complete connectomes of the worm and the fly, two cubic-millimetre reconstructions of mammalian cortex, and one whole-brain fly model that predicts some real behaviours from wiring and predicted synapse signs alone. Everything larger is projection: the mammalian frontier is about a millionth of a human brain, and no mammalian emulation exists at any scale. The deeper obstacles are scientific, since a wiring diagram fixes topology but not weights, modulatory state, electrical synapses, glia or plasticity rules, and genetically identical animals differ in their wiring.
+
+## Why this matters for the project
+
+Uploading, in any version that preserves an individual rather than a type, is whole brain emulation. Sandberg and Bostrom's roadmap draws the line that matters: emulation copies a specific brain, simulation models a generic one [Sandberg and Bostrom, 2008](https://www.futureofhumanityinstitute.org/s/2008-3.pdf). What is to be preserved is the particular wiring and state of one nervous system, and the only known way to get at it is to scan it.
+
+The record is mixed. Complete, proofread wiring diagrams of nervous systems with 10^2 to 10^5 neurons exist, and for the fly a crude spiking model built on one predicts some real behaviours [Shiu et al., 2024](https://doi.org/10.1038/s41586-024-07763-9). That is the strongest evidence available that structure-first emulation is not a category error. Against it, the worm has had a wiring diagram for forty years and still no emulation that predicts its behaviour.
+
+For a project rooted in the loss of one animal, two points come early. Every connectome so far comes from fixed tissue destroyed by sectioning: the scan is the end of the original, and there is no agreed test of fidelity to run afterwards. And a cat-sized brain lies about four orders of magnitude beyond anything demonstrated in mammals, with no project aimed at that scale. Connectomics tells you what preservation would have to capture; it does not yet show that it can be captured.
+
+## Key ideas
+
+**Connectome.** A map of every neuron and the synaptic connections between them in a tissue volume or whole nervous system, usually reconstructed from electron microscopy (EM) at a few nanometres per pixel. It records anatomy, who contacts whom and roughly how many synapses, not the strength or sign of each connection.
+
+**Levels of emulation.** Sandberg and Bostrom's ladder of fidelity runs from coarse computational modules and region-level connectivity through spiking networks and detailed electrophysiology to metabolome, proteome, single-molecule and quantum levels [Sandberg and Bostrom, 2008](https://www.futureofhumanityinstitute.org/s/2008-3.pdf). Secondary summaries put the compute estimates at about 10^18 FLOPS for a spiking-network emulation, 10^25 for the metabolome level and around 10^43 for single-molecule stochastics; these were not checked against the PDF. The report concluded that scanning and interpretation, not compute, are the bottlenecks, and that is where the field has moved.
+
+**Volume EM and the petabyte problem.** Tissue is cut or milled into slices tens of nanometres thick, each imaged at nanometre resolution, and the stack aligned into a 3D volume. One cubic millimetre of human cortex produced about 1.4 petabytes of raw data [Shapson-Coe et al., 2024](https://doi.org/10.1126/science.adk4858); a whole mammalian brain implies exabytes to zettabytes.
+
+**Segmentation and proofreading.** Convolutional networks trace neurons through the volume; Google Research's flood-filling networks, from Viren Jain's team, were used for the hemibrain, H01 and the male fly CNS. Humans then correct merge and split errors, and this proofreading is widely described as the dominant cost.
+
+**PRISM.** E11 Bio's Protein Reconstruction and Identification through Multiplexing expands tissue so light microscopes reach nanoscale effective resolution, and gives each neuron a combinatorial protein barcode so that neuron tracing can self-correct instead of relying on human proofreading [Park et al., 2025](https://doi.org/10.1101/2025.09.26.678648).
+
+**From wiring to dynamics.** A bare connectome has no signs. Classifiers trained on EM image features at synaptic sites infer each synapse's transmitter [Eckstein et al., 2024](https://doi.org/10.1016/j.cell.2024.03.016), hence its sign. Shiu and colleagues then placed a leaky integrate-and-fire (LIF) unit at every node, with weights from synapse counts and signs from those predictions [Shiu et al., 2024](https://doi.org/10.1038/s41586-024-07763-9). Pairing such a reconstruction with recordings from the same neurons in the living animal, as MICrONS did, is called functional connectomics [MICrONS Consortium, 2025](https://doi.org/10.1038/s41586-025-08790-w).
+
+**Necessary but not sufficient.** Bargmann and Marder's position that a wiring diagram constrains but does not determine function, because neuromodulators, intrinsic dynamics, gap junctions and parallel pathways let identical wiring produce different behaviours [Bargmann and Marder, 2013](https://doi.org/10.1038/nmeth.2451).
+
+**Connectome variability.** Eight genetically identical worms reconstructed across development showed a stable layout but synaptic wiring that changed with age and differed between adults [Witvliet et al., 2021](https://doi.org/10.1038/s41586-021-03778-8). A connectome is a sample from a distribution, not a blueprint.
+
+## State of the field (as of 2026-10-09)
+
+Details below were cross-checked from search snippets, bibliographies and project repositories, not publisher pages.
+
+**The worm.** Cook and colleagues produced whole-animal connectomes of both C. elegans sexes: 302 neurons, 132 muscles and 26 non-muscle end organs in the hermaphrodite, 385 neurons, 155 muscles and 39 end organs in the male, stitched from several EM series with gaps filled by extrapolation across repetitive regions [Cook et al., 2019](https://doi.org/10.1038/s41586-019-1352-7). Witvliet and colleagues' eight-animal developmental series found the network becoming more feedforward and modular with age [Witvliet et al., 2021](https://doi.org/10.1038/s41586-021-03778-8). OpenWorm's integrative simulation remains unfinished, and its Connectome Toolbox catalogues the competing worm datasets any model must choose between [OpenWorm, 2023-2026](https://github.com/openworm/ConnectomeToolbox).
+
+**The fly.** The hemibrain, released in 2020, reconstructed around 25,000 neurons and about 20 million chemical synapses from a large part of one central brain [Scheffer et al., 2020](https://doi.org/10.7554/eLife.57443). In October 2024 FlyWire (Seung and Murthy labs, Princeton) published a whole adult female brain: 139,255 neurons and about 54.5 million chemical synapses, segmented by AI and proofread by community and experts [Dorkenwald et al., 2024](https://doi.org/10.1038/s41586-024-07558-y). The companion paper annotated 8,453 cell types (4,581 new) and found them highly stereotyped across individuals, though about a third of hemibrain-proposed types could not be reliably re-identified [Schlegel et al., 2024](https://doi.org/10.1038/s41586-024-07686-5).
+
+Shiu and colleagues built a LIF model over 127,400 proofread neurons and about 50 million synapses [Shiu et al., 2024](https://doi.org/10.1038/s41586-024-07763-9). Activating gustatory neurons predicted taste-responsive neurons, feeding motor output and taste interactions; activating mechanosensory neurons predicted the antennal grooming circuit. About 91 per cent of 164 optogenetically tested predictions held, under stark assumptions: zero baseline firing, no gap junctions, no neuromodulation beyond excitation and inhibition.
+
+In October 2025 a collaboration between HHMI Janelia, the University of Cambridge and MRC LMB, and Google Research posted the complete male central nervous system on bioRxiv: 166,691 neurons across brain and ventral nerve cord and 11,691 cell types. A v1.0 data release followed on 8 June 2026, and the paper appeared in Cell on 3 September 2026 (111 authors, Gregory Jefferis senior) with revised counts of 166,700 neurons, 11,710 types and 124.2 million proofread synaptic connections [Berg et al., 2026](https://doi.org/10.1016/j.cell.2026.08.015). It is the first complete insect CNS including the nerve cord.
+
+**Mammals.** MICrONS reconstructed about one cubic millimetre of mouse visual cortex: more than 200,000 cells and roughly half a billion synapses, co-registered with calcium imaging of around 75,000 neurons in an awake mouse, with like-to-like connectivity between similarly tuned neurons [MICrONS Consortium, 2025](https://doi.org/10.1038/s41586-025-08790-w). H01 reconstructed one cubic millimetre of surgically removed human temporal cortex: about 57,000 cells, 150 million synapses and 1.4 petabytes, with glia roughly twice as numerous as neurons [Shapson-Coe et al., 2024](https://doi.org/10.1126/science.adk4858). These are the largest published dense mammalian cortical reconstructions by volume, though the male fly CNS has more reconstructed neurons and proofread connections than either. Larger mouse volumes (around 10 mm³) are reported in progress; I could not confirm any release.
+
+**Cost and instruments.** E11 Bio, a nonprofit, released PRISM alongside a method preprint dated 26 September 2025 [Park et al., 2025](https://doi.org/10.1101/2025.09.26.678648). Third-party summaries describe the cost claim variously as a 100-fold reduction and as a 95 per cent reduction from eliminating human proofreading; the announcement blog's wording and date were not confirmed, and I found no independent validation. The State of Brain Emulation Report 2025 is said to estimate that imaging a whole mouse brain in five years would need 40 to 50 PRISM-class microscopes in parallel [Zanichelli et al., 2025](https://arxiv.org/abs/2510.15745), a figure unverified against the PDF. Collins, Huffman and Koene compare EM routes with expansion microscopy coupled to light-sheet imaging [Collins et al., 2025](https://arxiv.org/abs/2405.10488); Huffman is a PRISM co-author and Koene founded Carboncopies, so the comparison is written by advocates.
+
+**Scale.**
+
+| Organism | Neurons (approx.) | What exists, October 2026 | Source |
+|---|---|---|---|
+| C. elegans, hermaphrodite / male | 302 / 385 | Complete whole-animal connectomes of both sexes; eight-animal developmental series | Cook 2019; Witvliet 2021 |
+| Drosophila, female brain | 139,255 | Complete brain, ~54.5 M synapses, 8,453 cell types | Dorkenwald 2024; Schlegel 2024 |
+| Drosophila, male CNS | 166,700 | Complete brain plus ventral nerve cord, 124.2 M proofread connections, 11,710 types | Berg 2026 |
+| Mouse | ~7 x 10^7 | ~1 mm³ of visual cortex (>200,000 cells, ~0.5 billion synapses) with activity of ~75,000 neurons | MICrONS 2025 |
+| Cat | ~7.6 x 10^8 cortical neurons (older estimate); ~2.5 x 10^8 in newer counts | Nothing at connectomic resolution | none |
+| Human | ~8.6 x 10^10 | ~1 mm³ of temporal cortex (~57,000 cells, ~150 M synapses, 1.4 PB) | Shapson-Coe 2024 |
+
+A cubic millimetre is about 1/500 of a mouse brain and a millionth of a human brain. At H01's data density a cat brain of 25,000 to 30,000 mm³ would yield 35 to 40 exabytes of raw imagery, a 10^4-fold scale-up over anything demonstrated, and a human brain more than a zettabyte; scaling the mouse instrument estimate by volume implies 2,000 to 3,000 PRISM-class instruments for a five-year cat scan. These figures depend on volume, not on the uncertain cat neuron count. No such project exists; the mouse is the declared next target.
+
+## Debates and critiques
+
+**Necessary but not sufficient.** Bargmann and Marder argue from invertebrate circuits and the vertebrate retina that neuromodulation, intrinsic dynamics and parallel pathways let the same wiring produce different functions [Bargmann and Marder, 2013](https://doi.org/10.1038/nmeth.2451). The fly model is the strongest counterpoint, and both sides can accept the same reconciliation: the successes so far are reflex-like sensorimotor circuits, not learning, motivation or state-dependent behaviour, where modulation matters most.
+
+**Would complete data yield understanding?** Jonas and Kording applied standard neuroscience analyses to a MOS 6502 microprocessor with full ground truth and recovered structure but not the hierarchy of information processing [Jonas and Kording, 2017](https://doi.org/10.1371/journal.pcbi.1005268). The WBE reply, pressed by Koene and Carboncopies, is that emulation requires copying, not understanding [Carboncopies Foundation, ongoing](https://carboncopies.org/). The rejoinder is that you still have to know which variables to copy and at what resolution, which the fly results only begin to answer.
+
+**The C. elegans paradox.** A 302-neuron connectome has existed since 1986 and for both sexes since 2019, yet no model predicts worm behaviour from it. Optimists say the worm is unusually analogue (graded potentials, few spikes, heavy neuromodulation) and so a poor test case. Sceptics say that is exactly the point.
+
+**Individuality versus stereotypy.** Isogenic adult worms differ in connectivity [Witvliet et al., 2021](https://doi.org/10.1038/s41586-021-03778-8), while fly cell types are highly stereotyped [Schlegel et al., 2024](https://doi.org/10.1038/s41586-024-07686-5). Whether synapse-level differences matter for behaviour or wash out at the cell-type level is unresolved, and it decides whether "a" connectome can stand in for "this" brain. Only the latter is uploading.
+
+**Cost projections.** PRISM's 100-fold reduction and five-year mammalian timelines are the organisation's own projections; the State of Brain Emulation Report translates them into tens of parallel microscopes for a mouse, a projection built on a projection [Zanichelli et al., 2025](https://arxiv.org/abs/2510.15745). Several authors recur across these documents (Shiu, Huffman, Koene), which is normal in a small field but worth knowing.
+
+**What fixed-tissue EM misses.**
+
+| Captured by current EM connectomes | Not captured |
+|---|---|
+| Neuron morphology and topology | Synaptic weights, beyond count and size as proxies |
+| Synapse locations and counts | Receptor composition and short-term plasticity rules |
+| Cell types by morphology and connectivity | Neuromodulator tone and internal state |
+| Predicted transmitter, via image classifiers | Electrical synapses (gap junctions), largely invisible |
+| Glia and vasculature as structures | Glial computation; gene expression |
+
+Glia outnumber neurons two to one in human cortex [Shapson-Coe et al., 2024](https://doi.org/10.1126/science.adk4858) and are absent from every emulation attempt to date; gap junctions were excluded from the fly model despite their documented importance in worm and vertebrate circuits.
+
+## Open questions
+
+- At which Sandberg-Bostrom level does a mammalian emulation become behaviourally faithful: a spiking network with synapse-count weights, as in the fly, or detailed electrophysiology with modulatory state?
+- Can weights, receptor types and neuromodulatory state be read from fixed tissue, for instance by multiplexed protein or RNA labelling on expanded tissue, at whole-brain scale?
+- How much individual variation is behaviourally relevant: does the cell-type level suffice as a template while synapse-level detail does not?
+- Will the fly LIF approach extend to learning, navigation and internal-state-dependent behaviour once gap junctions, neuromodulation and plasticity are added?
+- Can a whole mouse brain (about 500 mm³, 7 x 10^7 neurons) be imaged, segmented and proofread within a decade, and at what cost?
+- What is the data-reduction strategy for exabyte-scale imagery, and can on-the-fly segmentation avoid storing it at all?
+- How will an emulation be validated when the original is gone? Carboncopies' Brain Emulation Challenge offers standardised ground-truth datasets for testing reconstruction methods [Carboncopies Foundation, ongoing](https://carboncopies.org/), but no agreed behavioural or physiological benchmark for a finished emulation exists.
+- Is the C. elegans gap a property of worms, or a general warning that connectome-first programmes stall at the dynamics step?
+
+## Where to start
+
+1. Read the two short critiques back to back, both free: [Bargmann and Marder, 2013](https://doi.org/10.1038/nmeth.2451) and [Jonas and Kording, 2017](https://doi.org/10.1371/journal.pcbi.1005268). The sceptical frame for everything else; an afternoon.
+2. Read the roadmap's levels-of-emulation table and scanning chapters [Sandberg and Bostrom, 2008](https://www.futureofhumanityinstitute.org/s/2008-3.pdf). About 130 pages, no maths beyond arithmetic; the original FHI link is dead, so use a mirror.
+3. Browse a real connectome in your browser: MICrONS Explorer (microns-explorer.org/cortical-mm3) for the mouse volume and the Janelia MaleCNS portal (male-cns.janelia.org) with neuPrint for the fly.
+4. Install the OpenWorm Connectome Toolbox (Python) and load the Cook 2019 and Witvliet 2021 datasets side by side [OpenWorm, 2023-2026](https://github.com/openworm/ConnectomeToolbox). Comparing them is the fastest way to feel the "which connectome?" problem.
+5. Run the fly whole-brain model from the public code (github.com/philshiu/Drosophila_brain_model) with FlyWire's downloads; it shows how thin the one behaviour-predicting model is. Then read the State of Brain Emulation Report 2025 [Zanichelli et al., 2025](https://arxiv.org/abs/2510.15745) and follow Carboncopies' journal clubs.
+
+## References
+
+1. Sandberg, A., Bostrom, N. (2008). *Whole Brain Emulation: A Roadmap*. Future of Humanity Institute, Oxford University, Technical Report #2008-3 (original URL http://www.fhi.ox.ac.uk/Reports/2008-3.pdf defunct; archive path unconfirmed). https://www.futureofhumanityinstitute.org/s/2008-3.pdf
+2. Cook, S. J., Jarrell, T. A., Brittin, C. A., Wang, Y., et al., Hall, D. H., Emmons, S. W. (2019). *Whole-animal connectomes of both Caenorhabditis elegans sexes*. Nature 571: 63-71. https://doi.org/10.1038/s41586-019-1352-7
+3. Witvliet, D., Mulcahy, B., Mitchell, J. K., et al., Zhen, M., Samuel, A. D. T. (2021). *Connectomes across development reveal principles of brain maturation*. Nature 596: 257-261. https://doi.org/10.1038/s41586-021-03778-8
+4. Scheffer, L. K., et al. (2020). *A connectome and analysis of the adult Drosophila central brain*. eLife 9: e57443. https://doi.org/10.7554/eLife.57443
+5. Dorkenwald, S., Matsliah, A., Sterling, A. R., et al., FlyWire Consortium, Murthy, M., Seung, H. S. (2024). *Neuronal wiring diagram of an adult brain*. Nature 634: 124-138. https://doi.org/10.1038/s41586-024-07558-y
+6. Schlegel, P., Yin, Y., Bates, A. S., et al., Jefferis, G. S. X. E. (2024). *Whole-brain annotation and multi-connectome cell typing of Drosophila*. Nature 634: 139-152. https://doi.org/10.1038/s41586-024-07686-5
+7. Eckstein, N., et al. (2024). *Neurotransmitter classification from electron microscopy images at synaptic sites in Drosophila melanogaster*. Cell 187(10): 2574-2594.e23. https://doi.org/10.1016/j.cell.2024.03.016
+8. Shiu, P. K., Sterne, G. R., Spiller, N., et al., Scott, K. (2024). *A Drosophila computational brain model reveals sensorimotor processing*. Nature 634: 210-219. https://doi.org/10.1038/s41586-024-07763-9
+9. Berg, S., Beckett, I. R., Costa, M., Schlegel, P., Januszewski, M., Marin, E. C., et al., Jefferis, G. S. X. E. (2026). *Sexual dimorphism in the complete Drosophila male central nervous system connectome*. Cell 189(18): 5504-5526.e15; preprint bioRxiv 10.1101/2025.10.09.680999 (2025). https://doi.org/10.1016/j.cell.2026.08.015
+10. MICrONS Consortium (Bae, J. A., et al., Tolias, A. S., Reid, R. C., Seung, H. S.) (2025). *Functional connectomics spanning multiple areas of mouse visual cortex*. Nature 640(8058): 435-447. https://doi.org/10.1038/s41586-025-08790-w
+11. Shapson-Coe, A., Januszewski, M., Berger, D. R., et al., Jain, V., Lichtman, J. W. (2024). *A petavoxel fragment of human cerebral cortex reconstructed at nanoscale resolution*. Science 384(6696): eadk4858. https://doi.org/10.1126/science.adk4858
+12. Bargmann, C. I., Marder, E. (2013). *From the connectome to brain function*. Nature Methods 10(6): 483-490. https://doi.org/10.1038/nmeth.2451
+13. Jonas, E., Kording, K. P. (2017). *Could a Neuroscientist Understand a Microprocessor?* PLOS Computational Biology 13(1): e1005268. https://doi.org/10.1371/journal.pcbi.1005268
+14. Zanichelli, N., Schons, M., Freeman, I., Shiu, P., et al. (2025). *State of Brain Emulation Report 2025*. arXiv 2510.15745 (partial author list). https://arxiv.org/abs/2510.15745
+15. Park, S. Y., Sheridan, A., An, B., et al., Church, G. M., Funke, J., Huffman, T., Boyden, E. S., Rodriques, S. G., Payne, A. C. (2025). *Combinatorial protein barcodes enable self-correcting neuron tracing with nanoscale molecular context*. bioRxiv 10.1101/2025.09.26.678648 (E11 Bio PRISM preprint; blog at e11.bio/blog/prism). https://doi.org/10.1101/2025.09.26.678648
+16. Collins, L. T., Huffman, T., Koene, R. A. (2025). *Comparative prospects of imaging methods for whole-brain mammalian connectomics*. Cell Reports Methods 5; arXiv 2405.10488 (2024). https://arxiv.org/abs/2405.10488
+17. OpenWorm Foundation contributors (2023-2026). *OpenWorm Connectome Toolbox (cect)*. GitHub repository; docs at openworm.org/ConnectomeToolbox/. https://github.com/openworm/ConnectomeToolbox
+18. Koene, R. A., Carboncopies Foundation (ongoing). *Carboncopies Foundation*. GitHub organisation github.com/carboncopies (BrainGenix-NES, BrainEmulationChallenge). https://carboncopies.org/
