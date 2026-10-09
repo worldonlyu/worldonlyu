@@ -4,7 +4,7 @@ Every reference cited in the chapters, grouped by chapter and numbered as the ch
 
 How these were checked: each entry was located or re-checked through web search results on the date shown in its chapter. Publisher, DOI and preprint pages could not be opened from the environment that produced this notebook, so confirmation rests on search listings, not on the source pages. Entries marked **[not confirmed by search]** could not be confirmed that way and should be checked before use. Open the source before relying on any entry.
 
-Entries: 321 across 10 chapters, of which 0 are marked not confirmed.
+Entries: 321 across 10 chapters, of which 2 are marked not confirmed.
 
 ## Contents
 
@@ -27,7 +27,7 @@ Sourcing: 41 of 41 references confirmed by web search on 2026-10-09; entries mar
 
 1. Brooks, R. A. (1991). *Intelligence without representation*. Artificial Intelligence 47(1-3): 139-159. https://doi.org/10.1016/0004-3702(91)90053-M
 2. Harnad, S. (1990). *The Symbol Grounding Problem*. Physica D 42(1-3): 335-346. https://eprints.soton.ac.uk/250382/
-3. Dreyfus, H. L. (2007). *Why Heideggerian AI Failed and How Fixing It Would Require Making It More Heideggerian*. Philosophical Psychology 20(2): 247-268; also published in Artificial Intelligence 171(18): 1137-1160. https://doi.org/10.1080/09515080701239510 [URL not confirmed by search]
+3. Dreyfus, H. L. (2007). *Why Heideggerian AI Failed and How Fixing It Would Require Making It More Heideggerian*. Philosophical Psychology 20(2): 247-268; also published in Artificial Intelligence 171(18): 1137-1160. https://doi.org/10.1080/09515080701239510 **[URL not confirmed by search]**
 4. Varela, F. J., Thompson, E. & Rosch, E. (1991). *The Embodied Mind: Cognitive Science and Human Experience*. MIT Press (revised edition 2017). https://mitpressbookstore.mit.edu/book/9780262529365
 5. O'Regan, J. K. & Noë, A. (2001). *A sensorimotor account of vision and visual consciousness*. Behavioral and Brain Sciences 24(5): 939-1031, target article with open peer commentary. https://doi.org/10.1017/S0140525X01000115
 6. Barsalou, L. W. (2008). *Grounded Cognition*. Annual Review of Psychology 59: 617-645. https://doi.org/10.1146/annurev.psych.59.103006.093639
@@ -47,7 +47,7 @@ Sourcing: 41 of 41 references confirmed by web search on 2026-10-09; entries mar
 20. Mollo, D. C. & Millière, R. (2023). *The Vector Grounding Problem*. arXiv 2304.01481; journal version in Philosophy and the Mind Sciences 7(1), 2026. https://arxiv.org/abs/2304.01481
 21. Zador, A., Escola, S., Richards, B., et al. (2023). *Catalyzing next-generation Artificial Intelligence through NeuroAI*. Nature Communications 14: 1597. https://doi.org/10.1038/s41467-023-37180-x
 22. Seth, A. K. (2025). *Conscious artificial intelligence and biological naturalism*. Behavioral and Brain Sciences, target article published online 21 April 2025. https://doi.org/10.1017/S0140525X25000032
-23. Froese, T. (2025). *Sense-making reconsidered: large language models and the blind spot of embodied cognition*. Phenomenology and the Cognitive Sciences, online first (listed as forthcoming; some sources give 2026). https://link.springer.com/article/10.1007/s11097-025-10132-0 [URL not confirmed by search]
+23. Froese, T. (2025). *Sense-making reconsidered: large language models and the blind spot of embodied cognition*. Phenomenology and the Cognitive Sciences, online first (listed as forthcoming; some sources give 2026). https://link.springer.com/article/10.1007/s11097-025-10132-0 **[URL not confirmed by search]**
 24. Brooks, R. (2025). *Why Today's Humanoids Won't Learn Dexterity*. rodneybrooks.com, September 2025. https://rodneybrooks.com/why-todays-humanoids-wont-learn-dexterity/
 25. Li, F.-F. (2025). *From Words to Worlds: Spatial Intelligence is AI's Next Frontier*. Essay, drfeifei.substack.com, 10 November 2025. https://drfeifei.substack.com/p/from-words-to-worlds-spatial-intelligence
 26. Zanichelli, N., Schons, M., Freeman, I., Shiu, P. & Arkhipov, A. (2025). *State of Brain Emulation Report 2025*. arXiv 2510.15745 (v1 17 October 2025; v3 5 November 2025). https://arxiv.org/abs/2510.15745
