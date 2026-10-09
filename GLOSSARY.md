@@ -14,13 +14,13 @@ Entries are alphabetical, with the one term that begins with a digit first. Date
 
 **Active inference and the free-energy principle**: Friston's formalisation of predictive processing. Organisms are said to minimise variational free energy, a bound on surprise, through both perception and action; Parr, Pezzulo and Friston (2022) give the full treatment. See: docs/01-embodied-cognition-foundations.md
 
-**Adversarial collaboration**: A preregistered study in which proponents of rival theories agree in advance on divergent predictions, methods and what would count as disconfirmation, and a theory-neutral team runs the experiment. The Templeton World Charity Foundation's Accelerating Research on Consciousness programme funded several; Cogitate (IIT versus GNWT) was the first to publish. See: docs/03-science-of-consciousness.md
+**Adversarial collaboration**: A preregistered study in which proponents of rival theories agree in advance on divergent predictions, methods and what would count as disconfirmation, and a theory-neutral team runs the experiment. The Templeton World Charity Foundation funded Cogitate (IIT versus GNWT), the first to publish, and the He, Chalmers and Block collaboration testing higher-order theories against Recurrent Processing Theory. See: docs/03-science-of-consciousness.md
 
 **Affordances**: Gibson's (1979) term for the possibilities for action that an environment offers an animal relative to that animal's body and abilities: a surface affords walking, a handle affords grasping. Gibson held that affordances are perceived directly. See: docs/01-embodied-cognition-foundations.md
 
 **AI Consciousness Test (ACT)**: Schneider's proposal to probe an AI that has been kept "boxed", with no exposure to human talk about consciousness, for a spontaneous grasp of experience-related concepts. See: docs/04-machine-consciousness.md
 
-**AI segmentation and proofreading**: Convolutional networks (for example Google's flood-filling networks and the Seung lab's pipelines) trace neurons through electron microscopy volumes, and humans then correct merge and split errors. Proofreading dominates the cost of a connectome; third-party summaries of E11 Bio's PRISM announcement put it at about 95 percent of the cost, a figure chapter 06 could not confirm. See: docs/06-whole-brain-emulation-and-connectomics.md
+**AI segmentation and proofreading**: Convolutional networks (for example Google's flood-filling networks and the Seung lab's pipelines) trace neurons through electron microscopy volumes, and humans then correct merge and split errors. Proofreading is widely described as the dominant cost of a connectome; E11 Bio's own roadmap post puts human proofreading at more than 95 percent of the cost of EM-based connectomics, a figure with no independent validation. See: docs/06-whole-brain-emulation-and-connectomics.md
 
 **Aldehyde-stabilised cryopreservation (ASC)**: Perfusing glutaraldehyde fixative first, to crosslink proteins and halt decay within minutes, then loading cryoprotectant and storing the vitrified brain near -135 C (McIntyre and Fahy 2015). It preserves ultrastructure across a whole brain but makes biological revival impossible; the aim is information preservation for future scanning. See: docs/07-brain-preservation.md
 
@@ -46,7 +46,7 @@ Entries are alphabetical, with the one term that begins with a digit first. Date
 
 ## C
 
-**Channels versus neurons**: A brain-computer interface's electrode or channel count (about 1,000 for Neuralink N1, Precision Layer 7 and Paradromics Connexus) is not the number of neurons it reads; stable, well-isolated single units are typically fewer than channels. For scale, a human brain has about 86 billion neurons and a cat's about 250 million cortical neurons, perhaps 750 million in the whole brain. See: docs/09-recording-simulation-and-hardware.md
+**Channels versus neurons**: A brain-computer interface's electrode or channel count (1,024 for Neuralink's N1 and Precision's Layer 7; 421 per module for Paradromics' Connexus) is not the number of neurons it reads; stable, well-isolated single units are typically fewer than channels. For scale, a human brain has about 86 billion neurons and a cat's cortex about 250 million by direct count (whole-brain figures of about 750 million are commonly quoted estimates without a modern direct count). See: docs/09-recording-simulation-and-hardware.md
 
 **Closest-continuer theory**: Nozick's proposal that you are whichever later candidate is most closely continuous with you, provided it is close enough and has no equal rival. It makes identity depend on what else happens to exist, which many find unacceptable. See: docs/08-personal-identity-and-the-ethics-of-uploading.md
 
@@ -112,7 +112,7 @@ Entries are alphabetical, with the one term that begins with a digit first. Date
 
 **Functional connectomics**: Pairing an electron microscopy connectome with recordings of the same neurons' activity in the living animal. MICrONS did this with calcium imaging of about 75,000 neurons co-registered to more than 200,000 reconstructed cells. See: docs/06-whole-brain-emulation-and-connectomics.md
 
-**Functional versus mechanistic compute estimates**: Mechanistic estimates count the operations needed to simulate the brain's physical processes (the Sandberg-Bostrom levels). Functional estimates (Carlsmith, AI Impacts) ask how many FLOP/s would match the brain's task performance, giving about 10^13 to 10^17 FLOP/s. They answer different questions and should not be compared directly. See: docs/09-recording-simulation-and-hardware.md
+**Functional versus mechanistic compute estimates**: Mechanistic estimates count the operations needed to simulate the brain's physical processes (the Sandberg-Bostrom levels). Functional estimates (Carlsmith) ask how many FLOP/s would match the brain's task performance; Carlsmith concludes that about 10^15 FLOP/s is more likely than not enough, with under 10 percent probability on needing more than 10^21. They answer different questions and should not be compared directly. See: docs/09-recording-simulation-and-hardware.md
 
 **Further-fact (Cartesian) view**: The view that personal identity consists in something over and above physical and psychological continuity, such as a soul or ego. Parfit argues against it; Chalmers keeps it as a live option because intuitions about uploading seem to presuppose it. See: docs/08-personal-identity-and-the-ethics-of-uploading.md
 
@@ -120,7 +120,7 @@ Entries are alphabetical, with the one term that begins with a digit first. Date
 
 **Gaming problem**: Birch's point that large language models trained on human descriptions of experience and tuned for human approval can reproduce every behavioural marker of sentience without the underlying capacity. This undermines behavioural evidence for AI sentience. See: docs/04-machine-consciousness.md
 
-**GLIF point neuron**: Generalised leaky integrate-and-fire models fitted by the Allen Institute to recorded cells so that a point-neuron network (for example the GLIF version of the V1 model) matches a biophysical one. They are now trainable on GPUs in BMTK's 2026 DPointNet backend. See: docs/09-recording-simulation-and-hardware.md
+**GLIF point neuron**: Generalised leaky integrate-and-fire models fitted by the Allen Institute to recorded cells so that a point-neuron network (for example the GLIF version of the V1 model) matches a biophysical one. BMTK 1.2.0 (June 2026) adds a GPU backend for GLIF networks. See: docs/09-recording-simulation-and-hardware.md
 
 **Global Neuronal Workspace Theory (GNWT) and ignition**: Dehaene, Changeux and Naccache's neural version of global workspace theory. Information becomes conscious when it triggers a sudden, self-sustaining "ignition" of a long-range frontoparietal network that broadcasts it to many specialised processors; the theory predicts a prefrontal role and ignition at both stimulus onset and offset. It was tested against IIT in the 2025 Cogitate adversarial collaboration, which challenged tenets of both. See: docs/03-science-of-consciousness.md
 
@@ -136,7 +136,7 @@ Entries are alphabetical, with the one term that begins with a digit first. Date
 
 **Hard problem of consciousness**: Chalmers's question of why and how physical processes give rise to subjective experience at all. It is distinct from the "easy" problems of explaining functions such as discrimination, report and attention. See: docs/03-science-of-consciousness.md
 
-**High-density silicon probe (Neuropixels)**: CMOS probes with thousands of recording sites along one or more shanks, hundreds of which can be read out at once. Neuropixels 2.0 added multi-shank, miniaturised, chronically stable recording over weeks; it is the current workhorse for mesoscale mammalian recording. See: docs/09-recording-simulation-and-hardware.md
+**High-density silicon probe (Neuropixels)**: CMOS probes with thousands of recording sites along one or more shanks; Neuropixels 2.0 has more than 5,000 sites per probe on multiple shanks and tracked the same neurons for over two months. It is the current workhorse for mesoscale mammalian recording, at a few thousand simultaneous units per experiment. See: docs/09-recording-simulation-and-hardware.md
 
 **Higher-order theories (HOT), including HOROR and perceptual reality monitoring**: Theories (Rosenthal, Lau, Brown) on which a first-order sensory state is conscious only when it is represented by a suitable higher-order state, for example a monitor that tags perceptual states as reliable. Higher-Order Representation of a Representation (HOROR) and Perceptual Reality Monitoring (PRM) are the two variants being tested against Recurrent Processing Theory in a Templeton adversarial collaboration led by Biyu He. Several of the indicator properties proposed for AI consciousness derive from these theories. See: docs/03-science-of-consciousness.md, docs/04-machine-consciousness.md
 
@@ -182,7 +182,7 @@ Entries are alphabetical, with the one term that begins with a digit first. Date
 
 **Moral patient (moral status, AI welfare)**: A being whose interests count morally in their own right. Whether an emulation or an AI system is a moral patient depends on whether it is sentient or has welfare, which is currently uncertain and may be untestable from behaviour alone; "Taking AI Welfare Seriously" and Anthropic's model welfare programme treat this as a near-term question under deep uncertainty. See: docs/04-machine-consciousness.md, docs/08-personal-identity-and-the-ethics-of-uploading.md
 
-**Moravec's paradox**: The observation (Moravec, Mind Children, 1988; also Brooks and Minsky) that high-level reasoning is computationally cheap while low-level perception and motor skills are expensive. It is usually explained by the long evolutionary history of sensorimotor competence. See: docs/01-embodied-cognition-foundations.md
+**Moravec's paradox**: The observation (Moravec, Mind Children, 1988) that high-level reasoning is computationally cheap while low-level perception and motor skills are expensive. It is usually explained by the long evolutionary history of sensorimotor competence. See: docs/01-embodied-cognition-foundations.md
 
 **Morphological computation**: The idea that a body's shape, materials and dynamics perform functions that would otherwise require neural control. Müller and Hoffmann (2017) argue that most cases are morphology facilitating control or perception, and that genuine computation by the body (for example physical reservoir computing) is rare. See: docs/01-embodied-cognition-foundations.md
 
@@ -190,7 +190,7 @@ Entries are alphabetical, with the one term that begins with a digit first. Date
 
 ## N
 
-**Nanowarming**: Rewarming a vitrified organ by radiofrequency excitation of iron-oxide nanoparticles perfused along with the cryoprotectant, giving fast and uniform heating that avoids devitrification and thermal-stress cracking. Demonstrated for rat kidneys stored for 100 days (Han et al. 2023). See: docs/07-brain-preservation.md
+**Nanowarming**: Rewarming a vitrified organ by radiofrequency excitation of iron-oxide nanoparticles perfused along with the cryoprotectant, giving fast and uniform heating that avoids devitrification and thermal-stress cracking. Demonstrated for rat kidneys vitrified for up to 100 days and then transplanted with life-sustaining function (Han et al. 2023). See: docs/07-brain-preservation.md
 
 **Necessary but not sufficient**: The Bargmann-Marder position that a wiring diagram constrains but does not determine function. Neuromodulators, intrinsic neuronal dynamics, gap junctions, glia, gene expression and plasticity all shape what a circuit does. See: docs/06-whole-brain-emulation-and-connectomics.md
 
@@ -212,7 +212,7 @@ Entries are alphabetical, with the one term that begins with a digit first. Date
 
 **Perturbational Complexity Index (PCI)**: A TMS-EEG measure (Casali et al. 2013) that compresses the cortical response to a magnetic pulse using Lempel-Ziv complexity. High PCI indicates integrated yet differentiated cortical dynamics, and an empirically validated cutoff separates conscious from unconscious states in healthy and brain-injured people. See: docs/03-science-of-consciousness.md
 
-**Petavoxel and petabyte scale**: A cubic millimetre of cortex imaged at about 4 nm lateral resolution yields on the order of 10^15 voxels and about 1.4 petabytes of data. Whole mammalian brains imply exabytes to zettabytes. See: docs/06-whole-brain-emulation-and-connectomics.md
+**Petavoxel and petabyte scale**: A cubic millimetre of cortex imaged at nanometre resolution yields on the order of 10^15 voxels and about 1.4 petabytes of raw data (H01, human temporal cortex). Whole mammalian brains imply exabytes to zettabytes. See: docs/06-whole-brain-emulation-and-connectomics.md
 
 **Phenomenal consciousness**: Subjective experience, there being "something it is like" to be a system. It is distinct from access consciousness (information being globally available for report and control) and from wakefulness (the arousal state supported by the brainstem); debates about machine consciousness are almost always about the phenomenal kind. See: docs/04-machine-consciousness.md, docs/05-animal-consciousness-and-the-feline-mind.md
 
@@ -220,7 +220,7 @@ Entries are alphabetical, with the one term that begins with a digit first. Date
 
 **Posterior hot zone**: The claim, associated with IIT and some first-order theories, that the anatomical substrate of human conscious content is temporo-parieto-occipital cortex rather than prefrontal cortex. The "front versus back" debate is the main anatomical dispute between theory families. See: docs/03-science-of-consciousness.md
 
-**Postmortem interval (PMI)**: The time between death and fixation or cooling. Neuropathology reviews find that synapses remain identifiable under electron microscopy for roughly a day in refrigerated tissue, degrading progressively; autolysis at room temperature is far faster. See: docs/07-brain-preservation.md
+**Postmortem interval (PMI)**: The time between death and fixation or cooling. A systematic review finds cell swelling within minutes to hours, membrane structure lost over an uncertain window of several hours to several days depending on temperature and species, and synapses no longer identifiable after days to weeks; autolysis at room temperature is far faster than refrigerated decay. See: docs/07-brain-preservation.md
 
 **Precautionary, low-cost welfare interventions**: The approach recommended by Long and colleagues and adopted by Anthropic: given deep uncertainty about moral status, take cheap steps (the ability to exit abusive interactions, weight preservation, exit interviews) that would matter if the system has welfare and cost little if it does not. See: docs/08-personal-identity-and-the-ethics-of-uploading.md
 
@@ -232,7 +232,7 @@ Entries are alphabetical, with the one term that begins with a digit first. Date
 
 ## R
 
-**Real-time factor**: Simulated time divided by wall-clock time. IBM's 2009 cat-scale run was several hundred times slower than real time, BrainScaleS-2 runs about 1,000 times faster, and most large biophysical simulations run far slower than life, which matters for simulating learning and development. See: docs/09-recording-simulation-and-hardware.md
+**Real-time factor**: Simulated time divided by wall-clock time. IBM's 2009 cat-scale run was far slower than real time, BrainScaleS-2 runs about 1,000 times faster, and most large biophysical simulations run far slower than life, which matters for simulating learning and development. See: docs/09-recording-simulation-and-hardware.md
 
 **Recording doubling time**: The exponential growth constant for the number of neurons recorded simultaneously with electrodes. Stevenson and Kording estimated about 7 years in 2011, and Stevenson's maintained dataset fits 6.3 years (data to about 2020); it applies to electrophysiology, while imaging has jumped far ahead of the trend. See: docs/09-recording-simulation-and-hardware.md
 
@@ -240,11 +240,11 @@ Entries are alphabetical, with the one term that begins with a digit first. Date
 
 **Relation R**: Parfit's term for psychological connectedness and continuity with any cause. Parfit argues that Relation R, not numerical identity, is what rationally matters in survival ("identity is not what matters"), so a replica can have what matters even when it is not, strictly, you. See: docs/08-personal-identity-and-the-ethics-of-uploading.md
 
-**RL fine-tuning from experience (RECAP)**: Improving a pretrained vision-language-action model with reinforcement learning on the robot's own rollouts, using value functions and advantage conditioning (pi\*0.6). The vendor reports that it doubled throughput on tasks such as espresso making. See: docs/02-embodied-ai-state-of-the-art.md
+**RL fine-tuning from experience (RECAP)**: Improving a pretrained vision-language-action model with reinforcement learning on the robot's own rollouts, using value functions and advantage conditioning (pi\*0.6). The company reports that it more than doubled throughput and roughly halved failures on tasks such as espresso making. See: docs/02-embodied-ai-state-of-the-art.md
 
 ## S
 
-**Secure base test**: The Ainsworth-style separation and reunion procedure (two minutes with the caregiver, two alone, two on reunion) adapted for cats by Vitale and Udell. Cats showing reduced stress and balanced attention on reunion are classified as securely attached. See: docs/05-animal-consciousness-and-the-feline-mind.md
+**Secure base test**: The Ainsworth-style separation and reunion procedure adapted for cats by Vitale, Behnke and Udell. Cats showing reduced stress and balanced attention on reunion are classified as securely attached. See: docs/05-animal-consciousness-and-the-feline-mind.md
 
 **Seemingly conscious AI (SCAI)**: Suleyman's term for systems that convincingly imitate the markers of consciousness without being conscious. He argues that the illusion, not the reality, is the near-term danger. See: docs/04-machine-consciousness.md
 
@@ -256,7 +256,7 @@ Entries are alphabetical, with the one term that begins with a digit first. Date
 
 **Sentience candidate (realistic possibility)**: Birch's term for a system for which there is a realistic, evidence-based possibility of valenced experience, even if the probability cannot be quantified. Being a candidate triggers a duty to consider proportionate precautions without waiting for proof; the New York Declaration uses the same phrase for all vertebrates and many invertebrates. See: docs/04-machine-consciousness.md, docs/05-animal-consciousness-and-the-feline-mind.md
 
-**Serial-section and volume electron microscopy**: Cutting or milling tissue into slices about 30 to 40 nm thick and imaging each at a few nanometres per pixel (serial-section TEM, SBEM, FIB-SEM, multibeam SEM), then aligning the stack into a 3D volume. It produces petabytes of data per cubic millimetre. See: docs/06-whole-brain-emulation-and-connectomics.md
+**Serial-section and volume electron microscopy**: Cutting or milling tissue into slices tens of nanometres thick and imaging each at a few nanometres per pixel (serial-section TEM, SBEM, FIB-SEM, multibeam SEM), then aligning the stack into a 3D volume. It produces petabytes of data per cubic millimetre. See: docs/06-whole-brain-emulation-and-connectomics.md
 
 **Shortcut learning**: Policies latching onto spurious correlations, such as background or camera cues, because individual sub-datasets lack diversity and are distributionally fragmented from one another. Xing et al. (CoRL 2025) propose it as an explanation for the poor out-of-distribution generalisation of generalist robot policies. See: docs/02-embodied-ai-state-of-the-art.md
 

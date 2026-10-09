@@ -1,6 +1,6 @@
 # Open Questions
 
-The open questions from all nine chapters, consolidated, deduplicated and grouped by theme. Compiled 2026-10-09. Where several chapters ask the same thing in different words, they are merged into one entry that cites all of them. Three questions (Q21, Q36, Q66) were added at consolidation rather than taken from a chapter's Open questions section, and are marked as such in their notes.
+The open questions from all ten chapters, consolidated, deduplicated and grouped by theme. Compiled 2026-10-09. Where several chapters ask the same thing in different words, they are merged into one entry that cites all of them. Three questions (Q21, Q36, Q66) were added at consolidation rather than taken from a chapter's Open questions section, and are marked as such in their notes.
 
 Each question carries a tag and a one-line note.
 
@@ -72,7 +72,7 @@ Summary: 66 questions. 36 empirical, 10 conceptual, 20 both. The central questio
 `docs/03-science-of-consciousness.md`. Moves with: tractable approximations with proven bounds; a published list of IIT's own refutation conditions, which the 2023 open letter and 2025 exchange did not produce.
 
 **Q18. Will pending adversarial collaborations discriminate between theories where the first did not?** (empirical)
-`docs/03-science-of-consciousness.md`, `docs/04-machine-consciousness.md`. Moves with: results from Cogitate's second experiment, the 2026 non-human primate and mouse protocol, and the He, Chalmers and Block collaboration on higher-order versus first-order theories.
+`docs/03-science-of-consciousness.md`, `docs/04-machine-consciousness.md`. Moves with: results from Cogitate's second experiment (139 participants; so far only a conference poster) and from the He, Chalmers and Block collaboration on higher-order versus first-order theories (grant ended December 2023; no published results found).
 
 **Q19. What is the true prevalence and mechanism of cognitive motor dissociation, and how can detection be standardised cheaply for routine clinical use?** (empirical)
 `docs/03-science-of-consciousness.md`. Moves with: population-based rather than convenience samples (the 25 percent figure is from the latter); validated bedside EEG protocols.
@@ -138,7 +138,7 @@ Summary: 66 questions. 36 empirical, 10 conceptual, 20 both. The central questio
 `docs/05-animal-consciousness-and-the-feline-mind.md`. Moves with: resolution of the Merker versus Coenen dispute over midbrain consciousness; a quantitative account of brainstem, hypothalamic and interoceptive contributions to feline affect.
 
 **Q38. Why is hypertrophic cardiomyopathy so often silent, which cats will progress to thromboembolism or sudden death, and is there affordable screening that would change outcomes?** (empirical)
-`docs/05-animal-consciousness-and-the-feline-mind.md`. Moves with: prospective screening trials with outcome endpoints; biomarkers or cheap imaging that beat auscultation's 31 percent sensitivity.
+`docs/05-animal-consciousness-and-the-feline-mind.md`, `docs/10-what-is-possible-today.md`. Moves with: prospective screening trials with outcome endpoints; biomarkers or cheap imaging that beat auscultation's 31 percent sensitivity.
 
 ## 7. What a connectome leaves out: fidelity and the dynamics gap
 
@@ -166,7 +166,7 @@ Summary: 66 questions. 36 empirical, 10 conceptual, 20 both. The central questio
 ## 8. Scale: scanning, data and compute
 
 **Q46. Can connectomics scale from one cubic millimetre to a whole mouse brain within a decade, at what cost, and by what route to a cat (about 25,000 times the mapped volume) or a human (about a million times)?** (empirical)
-`docs/06-whole-brain-emulation-and-connectomics.md`, `docs/07-brain-preservation.md`. Moves with: independent validation of claimed 100-fold cost reductions (PRISM); a funded whole-mouse project with published throughput; the State of Brain Emulation Report is reported to estimate 40 to 50 PRISM-class microscopes for five years for a mouse (unverified against the PDF).
+`docs/06-whole-brain-emulation-and-connectomics.md`, `docs/07-brain-preservation.md`. Moves with: independent validation of E11 Bio's own claim that PRISM will cut the cost of connectomics about 100-fold; a funded whole-mouse project with published throughput (BRAIN CONNECTS pays for pipelines meant to scale to whole mouse brains, but its largest project targets 10 mm³, a few percent of the brain); the State of Brain Emulation Report 2025 estimates that imaging a whole mouse brain in five years would need about 40 to 50 electron microscopes of the kind used in the Allen Institute's BRAIN CONNECTS project running in parallel, a projection built on a projection.
 
 **Q47. What is the data-reduction strategy for exabyte-scale raw imagery, and can on-the-fly segmentation avoid storing it at all?** (empirical)
 `docs/06-whole-brain-emulation-and-connectomics.md`. Moves with: a pipeline that discards raw voxels after segmentation without measurable loss in proofreading accuracy.
@@ -218,7 +218,7 @@ Summary: 66 questions. 36 empirical, 10 conceptual, 20 both. The central questio
 **Q60. Could an artificial system or emulation be a moral patient without phenomenal consciousness, through robust agency and preferences alone, and how would that change what is owed to it?** (conceptual)
 `docs/04-machine-consciousness.md`. Moves with: a defended theory of moral status that does not route through experience; empirical work on preference-like structure in systems would feed it but not decide it.
 
-**Q61. At what fidelity and scale does an emulation acquire moral status: a 139,000-neuron insect simulation, a 750-million-neuron cat, or neither?** (both)
+**Q61. At what fidelity and scale does an emulation acquire moral status: a 139,000-neuron insect simulation, a cat-scale one (about 250 million cortical neurons by direct count; whole-brain figures of about 750 million are commonly quoted estimates without a modern direct count), or neither?** (both)
 `docs/08-personal-identity-and-the-ethics-of-uploading.md`. Moves with: progress on Q27 and Q30; a principled account that is more than a neuron count. Insect-scale spiking simulations already exist and are run without any such account.
 
 **Q62. How should policy handle the asymmetry of errors: creating suffering digital minds at scale versus crippling beneficial systems through misplaced moral concern?** (both)
@@ -233,7 +233,7 @@ Summary: 66 questions. 36 empirical, 10 conceptual, 20 both. The central questio
 ## 13. Grief and digital memorials
 
 **Q65. Do griefbots and digital memorials help or harm grieving owners?** (empirical)
-`docs/07-brain-preservation.md`. Moves with: randomised or longitudinal outcome studies; none exist, and the critical literature warns of unconsented data use and commercial manipulation.
+`docs/07-brain-preservation.md`, `docs/10-what-is-possible-today.md`. Moves with: randomised or longitudinal outcome studies; none exist, and the critical literature warns of unconsented data use and commercial manipulation.
 
 **Q66. What is a bereaved animal's own experience of loss, and does it change how we should think about the attachments an emulation would need to carry?** (both)
 `docs/05-animal-consciousness-and-the-feline-mind.md` (added at consolidation; not in the chapter's own Open questions). Moves with: Q34's physiological measurements; the conceptual part is whether attachment to specific individuals is part of what a faithful model of a cat would have to include.
@@ -254,14 +254,14 @@ Questions the chapters treat as answered by current evidence. They are listed so
 
 Topics a whole-notebook review (October 2026) found missing or thin. They are the next research items, not open questions in the field, and each names the chapter that should absorb it.
 
-- **Whole-mouse-brain connectomics programmes.** The NIH BRAIN CONNECTS programme (launched 2023) and other funded scaling efforts beyond E11 Bio's PRISM; chapter 06 currently understates how many groups are aiming at a whole mouse brain. `docs/06-whole-brain-emulation-and-connectomics.md`.
-- **Connectome-constrained deep-network models.** Lappalainen et al. (2024, Nature) fitted unknown parameters of the fly visual system from its connectome; it belongs beside Shiu et al. as the second major structure-to-function result. `docs/06-whole-brain-emulation-and-connectomics.md`.
+- **Whole-mouse-brain connectomics programmes.** The NIH BRAIN CONNECTS programme (launched 2023) and other funded scaling efforts beyond E11 Bio's PRISM; chapter 06 now covers BRAIN CONNECTS (September 2023, eleven awards, about US$150 million, with Allen Institute and Harvard projects each targeting a few percent of a mouse brain), but other groups aiming at a whole mouse brain are still unsurveyed. `docs/06-whole-brain-emulation-and-connectomics.md`.
+- **Connectome-constrained deep-network models.** Lappalainen et al. (2024, Nature) fitted unknown parameters of the fly visual system from its connectome; it belongs beside Shiu et al. as the second major structure-to-function result; chapter 06 now cites it in "From wiring to dynamics", but only in passing. `docs/06-whole-brain-emulation-and-connectomics.md`.
 - **Molecular and barcode connectomics, and synapse-state readout.** MAPseq and BRICseq, array tomography, expansion sequencing and synaptic proteomics are the actual candidate routes to the weights, receptors and modulators every chapter says a connectome lacks. `docs/06-whole-brain-emulation-and-connectomics.md`, `docs/09-recording-simulation-and-hardware.md`.
-- **Feasibility analyses of whole brain emulation after 2008.** Eth, Foust and Whale (2013), Sandberg's 2014 Monte Carlo model and later community forecasts, so the notebook does not rest on a single roadmap. `docs/06-whole-brain-emulation-and-connectomics.md`.
+- **Feasibility analyses of whole brain emulation after 2008.** Eth, Foust and Whale (2013), Sandberg's 2014 Monte Carlo model and later community forecasts, so the notebook does not rest on a single roadmap; chapter 06 now cites the State of Brain Emulation Report 2025 and Collins, Huffman and Koene (2025), but the 2013 and 2014 analyses are still missing. `docs/06-whole-brain-emulation-and-connectomics.md`.
 - **Cat neuroscience beyond Hubel and Wiesel.** Feline brain atlases and MRI templates, Sherrington's reflex physiology, Jouvet's sleep work in cats, critical-period plasticity in kittens (directly relevant to the thesis that the body trains the brain), and the awake-cat imaging and auditory-cortex literature. `docs/05-animal-consciousness-and-the-feline-mind.md`.
 - **The wider feline cognition literature and behavioural markers of consciousness.** Object permanence, quantity discrimination, cat-human vocal communication, Vitale Shreve and Udell's 2015 review, Bradshaw's synthesis; and Unlimited Associative Learning (Birch, Ginsburg and Jablonka) and metacognition paradigms as markers. `docs/05-animal-consciousness-and-the-feline-mind.md`.
 - **Post-mortem and ischaemic decay data, cryoprotectant toxicity, and the legal status of pet preservation by jurisdiction.** Chapter 07 argues from general principles where case reports and toxicity studies exist. `docs/07-brain-preservation.md`.
-- **Machine consciousness sources not yet cited.** Dehaene, Lau and Kouider (2017, Science) on C1 and C2 consciousness in machines, and the critical literature on AI welfare (for example Birhane and van Dijk 2020). `docs/04-machine-consciousness.md`.
+- **Machine consciousness sources not yet cited.** Dehaene, Lau and Kouider (2017, Science) on C1 and C2 consciousness in machines, now cited in chapter 04; the critical literature on AI welfare (for example Birhane and van Dijk 2020) is still missing. `docs/04-machine-consciousness.md`.
 - **Non-destructive imaging limits for a living mammalian brain.** MRI and diffusion resolution, X-ray nanotomography and photoacoustic methods, as the stated reason why uploading a living subject differs from scanning a preserved one. `docs/09-recording-simulation-and-hardware.md`.
 - **Validation benchmarks for emulations beyond Carboncopies.** The fly model's own optogenetic protocol and proposals for behavioural tests of emulations, tying together the validation questions in chapters 06, 08 and 09. `docs/06-whole-brain-emulation-and-connectomics.md`.
 - **Energy, storage and provenance engineering for exabyte-scale connectomics.** The roadmap flags this as a transferable skill for the reader; no chapter treats it. `docs/09-recording-simulation-and-hardware.md`.
